@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>victoria-erp-client</id>
+    <version>1.0.530.24998</version>
+    <title>Victoria ERP Client (Install)</title>
+    <authors>Ryan Wood, J &amp; J Wilson (Shops) Ltd</authors>
+    <projectUrl>https://dev.azure.com/JJWilsonLtd/Victoria%20ERP%20System</projectUrl>
+    <copyright>2026</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Victoria ERP Client</summary>
+    <description>Client software to run on each shops' Back Office device and connect to the Victoria ERP server</description>
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

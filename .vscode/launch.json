@@ -1,0 +1,15 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Update Victoria ERP Test",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "./update_all.ps1 -Name victoria-erp-client -ForcedPackages victoria-erp-client",
+            "args": []
+        }
+    ]
+}
