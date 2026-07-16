@@ -65,7 +65,7 @@ $Options = [ordered]@{
     UpdateTimeout = 1200                                    #Update timeout in seconds
     Threads       = 10                                      #Number of background jobs to use
     Push          = $Env:au_Push -eq 'true'                 #Push to chocolatey
-    PushAll       = $true                                   #Allow to push multiple packages at once
+    PushAll       = $false                                  #Allow to push multiple packages at once
     PluginPath    = "$PSScriptRoot/plugins/"                #Path to user plugins
     IgnoreOn      = @(                                      #Error message parts to set the package ignore status
       'Could not create SSL/TLS secure channel'
@@ -95,7 +95,11 @@ $Options = [ordered]@{
     #RepeatCount   = 2                                      #How many times to repeat on errors, by default 1
 
     #NoCheckChocoVersion = $true                            #Turn on this switch for all packages
-
+    
+    SecondaryPush = @{
+        Enabled = $true                                     #Enable secondary push for unpushed packages
+        SkipIfExists = $true                                #Skip if version exists in repository
+    }
 
     Report = @{
         Type = 'markdown'                                   #Report type: markdown or text
@@ -153,6 +157,7 @@ $Options = [ordered]@{
     } else {}
 
     ForcedPackages = $ForcedPackages -split ' '
+    
     BeforeEach = {
         param($PackageName, $Options )
 
