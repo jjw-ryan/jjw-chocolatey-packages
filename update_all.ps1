@@ -66,7 +66,7 @@ $Options = [ordered]@{
     Threads       = 10                                      #Number of background jobs to use
     Push          = $Env:au_Push -eq 'true'                 #Push to chocolatey
     PushAll       = $true                                   #Allow to push multiple packages at once
-    PluginPath    = ''                                      #Path to user plugins
+    PluginPath    = "$PSScriptRoot/plugins/"                #Path to user plugins
     IgnoreOn      = @(                                      #Error message parts to set the package ignore status
       'Could not create SSL/TLS secure channel'
       'Could not establish trust relationship'
@@ -137,20 +137,20 @@ $Options = [ordered]@{
         Path    = "$PSScriptRoot\update_info.xml"           #Path where to save the run info
     }
 
-    Mail = if ($Env:mail_user) {
-            @{
-                To         = $Env:mail_user
-                From       = $Env:mail_from
-                Server     = $Env:mail_server
-                UserName   = $Env:mail_user
-                Password   = $Env:mail_pass
-                Port       = $Env:mail_port
-                EnableSsl  = $Env:mail_enablessl -eq 'true'
-                Attachment = "$PSScriptRoot\update_info.xml"
-                UserMessage = ''
-                SendAlways  = $false                        #Send notifications every time
-             }
-           } else {}
+    Mail2 = if ($Env:mail_user) {
+        @{
+            To         = $Env:mail_user
+            From       = $Env:mail_from
+            Server     = $Env:mail_server
+            UserName   = $Env:mail_user
+            Password   = $Env:mail_pass
+            Port       = $Env:mail_port
+            EnableSsl  = $Env:mail_enablessl -eq 'true'
+            Attachment = "$PSScriptRoot\update_info.xml"
+            UserMessage = 'https://gist.github.com/jjw-ryan/bda7b7e253f65b9a47773e671794ee62'
+            SendAlways  = $true                        #Send notifications every time
+            }
+    } else {}
 
     ForcedPackages = $ForcedPackages -split ' '
     BeforeEach = {
