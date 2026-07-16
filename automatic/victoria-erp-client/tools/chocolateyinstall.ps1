@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $fileLocation = Join-Path $toolsDir 'Victoria ERP Client Installer.exe'
-$checksum = '6417E4E6CF8AA75746ECCF4EDDCCB22D93DC8AB05C1BED4DCC928A35FA5F9C1E'
+$checksum = 'B3925B766B0CE9F498D4BC4A7D7C6EF6E6E2094309109FD499D1AEB292476786'
 
 #$chocoLogDir = Join-Path $env:ChocolateyInstall 'logs'
 $innoLog = Join-Path $env:ChocolateyInstall "logs\$($env:ChocolateyPackageName)-install.log"

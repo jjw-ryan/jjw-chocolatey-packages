@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>victoria-erp-client</id>
-    <version>1.0.531.25654</version>
+    <version>1.0.531.26225</version>
     <title>Victoria ERP Client (Install)</title>
     <authors>Ryan Wood, J &amp; J Wilson (Shops) Ltd</authors>
     <projectUrl>https://dev.azure.com/JJWilsonLtd/Victoria%20ERP%20System</projectUrl>
